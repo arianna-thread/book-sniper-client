@@ -1,9 +1,7 @@
 'use strict';
 
 angular.module('bookSniperClientApp')
-  .constant 'configuration', () ->
-
-    {
-      port: 3000,
-      hostname: 'localhost'
-    }
+  .constant 'configuration',
+      port: 8000,
+      hostname: 'http://localhost'
+    

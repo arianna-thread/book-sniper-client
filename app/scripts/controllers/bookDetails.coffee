@@ -1,12 +1,13 @@
 'use strict'
 
 angular.module('bookSniperClientApp')
-  .controller 'BookDetailsCtrl', ($scope, restChart, $routeParams, $location, handleData) ->
-    
+  .controller 'BookDetailsCtrl', ($scope, Book, $routeParams, $location, handleData) ->
     if $routeParams.isbn
-        data = restChart.query isbn: $routeParams.isbn
+        data = Book.query isbn: $routeParams.isbn
     else
-        $location.path '/error'
+        $location.path '/error/:isbnNotProvided'
 
     $scope.chart.data = handleData.getData data
-    $scope.chart.legend handleData.getLegend data    
+    $scope.chart.legend handleData.getLegend data
+ 
+
