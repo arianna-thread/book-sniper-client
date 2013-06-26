@@ -13,7 +13,7 @@ angular.module('bookSniperClientApp', [])
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
-      .when '/bookDetails/:isbn',
+      .when '/book/:isbn',
         templateUrl: 'views/bookDetails.html',
         controller: 'BookDetailsCtrl'
       .otherwise

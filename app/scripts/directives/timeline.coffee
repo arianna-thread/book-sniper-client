@@ -2,7 +2,7 @@
 
 angular.module('bookSniperClientApp')
   .directive('timeline', () ->
-    template: '<div id="chart_div" style="width:700px; height:250px"></div></div>'
+    template: '<div id="chart_div" style="width:800px; height:350px"></div></div>'
     restrict: 'EA',
     scope: 
         data: '=',
@@ -10,8 +10,7 @@ angular.module('bookSniperClientApp')
 
     link: (scope, element, attrs) ->
         scope.$watch 'data', ()->
-            if data 
-                alert scope.data      
+            if scope.data      
                 data = new google.visualization.DataTable()
                 data.addColumn "date", "Date"
                 Object.keys(scope.legend).forEach (item)->

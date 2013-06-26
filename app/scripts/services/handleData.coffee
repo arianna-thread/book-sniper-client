@@ -6,7 +6,7 @@ angular.module('bookSniperClientApp')
     # ...
 
     getLegend = (data) ->
-        if data
+        if data && data.refs
             legend = data.refs.reduce((accumulator,item)->
                 accumulator[item.source] = 1
                 return accumulator;
@@ -17,8 +17,8 @@ angular.module('bookSniperClientApp')
 
 
     getData = (data) ->
-        if data
-            legend = getLegend()
+        if data && data.refs
+            legend = getLegend(data)
             data.refs.map( (item)->
                 array  = new Array(Object.keys(legend).length + 1)
                 array[0] = new Date(item.date)
