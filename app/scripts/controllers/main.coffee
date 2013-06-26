@@ -27,4 +27,4 @@ angular.module('bookSniperClientApp')
     $scope.details = (book) ->
         $location.path '/book/' + book.isbn
 
-
+    $scope.searchText = ""
