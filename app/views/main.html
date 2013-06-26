@@ -4,16 +4,69 @@
     </h1>
 </div>
 <div class="row">
-   <div class="span6"><input class="span6" type="text" placeholder="Search for title, author or ISBN" ng-model="searchText" /></div>
-    <div class="span3"><input type="submit" class="btn btn-primary span3" ng-click="search(searchText)" value="Search" /></div>
+    <div class="span6">
+        <input class="span6" type="text" placeholder="Search for title, author or ISBN"
+        ng-model="searchText" />
+    </div>
+    <div class="span3">
+        <input type="submit" class="btn btn-primary span3" ng-click="search(searchText)"
+        value="Search" />
+    </div>
 </div>
 <div class="row">
-   <div class="span6"><input class="span6" type="text" placeholder="Copy and paste the uri of Amazon, half-ebay, itunes or Google Books" ng-model="addUri" /></div>
-    <div class="span3"><input type="button" class="btn btn-primary span3" ng-click="track(addUri)" value="Start tracking!" /></div>
+    <div class="span6">
+        <input class="span6" type="text" placeholder="Copy and paste the uri of Amazon, half-ebay, itunes or Google Books"
+        ng-model="addUri" />
+    </div>
+    <div class="span3">
+        <input type="button" class="btn btn-primary span3" ng-click="track(addUri)"
+        value="Start tracking!" />
+    </div>
 </div>
 <div class="row">
+    <div class="alert" ng-show="alert">
+        <button type="button" class="close" ng-click="alert=''">
+            <i class='icon-close'>&times;</i>
+        </button>
+        <strong>
+            Sorry!
+        </strong>
+        {{alert}}
+    </div>
+</div>
+<div class="row">
+    <div class="alert alert-success" ng-show="alertSuccess">
+        <button type="button" class="close" ng-click="alertSuccess=''">
+            <i class='icon-close'>&times;</i>
+        </button>
+        <strong>
+        </strong>
+        {{alertSuccess}}
+    </div>
+</div>
+<div class="row main">
     <table class="table table-hover">
-        <tr><th>Title</th><th>Author</th><th>ISBN</th></tr>
-        <tr  ng-repeat="book in books" ng-click="details(book)"><td>{{book.title}}</td><td>{{book.author}}</td><td>{{book.isbn}}</td></tr>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                ISBN
+            </th>
+        </tr>
+        <tr ng-repeat="book in books" ng-click="details(book)">
+            <td>
+                {{book.title}}
+            </td>
+            <td>
+                {{book.author}}
+            </td>
+            <td>
+                {{book.isbn}}
+            </td>
+        </tr>
     </table>
 </div>
